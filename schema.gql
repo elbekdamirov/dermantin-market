@@ -1,0 +1,117 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Admin {
+  email: String!
+  full_name: String!
+  id: ID!
+  is_active: Boolean!
+  is_creator: Boolean!
+  password: String!
+  phone: String!
+}
+
+type Category {
+  id: ID!
+  logo: String
+  name: String!
+}
+
+input CreateAdminDto {
+  email: String!
+  full_name: String!
+  is_active: Boolean!
+  is_creator: Boolean!
+  password: String!
+  phone: String!
+}
+
+input CreateCategoryDto {
+  logo: String
+  name: String!
+}
+
+input CreateUserDto {
+  fullname: String!
+  lang: UserLang!
+  phone: String!
+  region: UserRegion!
+  role: UserRole!
+}
+
+type Mutation {
+  createAdmin(createAdminInput: CreateAdminDto!): Admin!
+  createCategory(createCategoryInput: CreateCategoryDto!): Category!
+  createUser(input: CreateUserDto!): User!
+  removeAdmin(id: ID!): Boolean!
+  removeCategory(id: ID!): Category!
+  removeUser(id: ID!): User!
+  updateAdmin(id: ID!, updateAdminInput: UpdateAdminDto!): Admin!
+  updateCategory(id: ID!, updateCategoryInput: UpdateCategoryDto!): Category!
+  updateUser(id: ID!, input: UpdateUserDto!): User!
+}
+
+type Query {
+  findAllAdmin: [Admin!]!
+  findAllCategory: [Category!]!
+  findAllUsers: [User!]!
+  findOneAdmin(id: ID!): Admin!
+  findOneCategory(id: ID!): Category!
+  findOneUsers(id: ID!): User!
+}
+
+input UpdateAdminDto {
+  email: String
+  full_name: String
+  is_active: Boolean
+  is_creator: Boolean
+  password: String
+  phone: String
+}
+
+input UpdateCategoryDto {
+  logo: String
+  name: String
+}
+
+input UpdateUserDto {
+  fullname: String
+  phone: String
+}
+
+type User {
+  fullname: String!
+  id: ID!
+  is_verified: Float!
+  lang: UserLang!
+  phone: String!
+  region: UserRegion!
+  role: UserRole!
+}
+
+enum UserLang {
+  RU
+  UZ
+}
+
+enum UserRegion {
+  ANDIJON
+  BUXORO
+  FARGONA
+  JIZZAX
+  NAMANGAN
+  NAVOIY
+  QASHQADARYO
+  QORAQALPOGISTON
+  SAMARQAND
+  SIRDARYO
+  SURXONDARYO
+  TOSHKENT
+  XORAZM
+}
+
+enum UserRole {
+  MANAGER
+  USER
+}
