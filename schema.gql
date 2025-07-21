@@ -5,6 +5,7 @@
 type Admin {
   email: String!
   full_name: String!
+  hashed_refresh_token: String!
   id: ID!
   is_active: Boolean!
   is_creator: Boolean!
@@ -19,10 +20,9 @@ type Category {
 }
 
 input CreateAdminDto {
+  confirm_password: String!
   email: String!
   full_name: String!
-  is_active: Boolean!
-  is_creator: Boolean!
   password: String!
   phone: String!
 }

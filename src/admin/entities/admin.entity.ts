@@ -33,6 +33,13 @@ export class Admin {
   @Column()
   password: string;
 
+  @ApiProperty({
+    description: "Parol (hashlangan)",
+  })
+  @Field()
+  @Column()
+  hashed_refresh_token: string;
+
   @ApiProperty({ example: true, description: "Admin aktivmi" })
   @Field()
   @Column({ default: true })

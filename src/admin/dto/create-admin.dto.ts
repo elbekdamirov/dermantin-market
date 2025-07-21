@@ -2,7 +2,7 @@ import { ApiProperty } from "@nestjs/swagger";
 import { InputType, Field } from "@nestjs/graphql";
 import { IsEmail, IsNotEmpty, IsPhoneNumber, IsBoolean } from "class-validator";
 
-@InputType() 
+@InputType()
 export class CreateAdminDto {
   @ApiProperty({ example: "Ali Valiyev" })
   @Field()
@@ -24,13 +24,9 @@ export class CreateAdminDto {
   @IsNotEmpty()
   password: string;
 
-  @ApiProperty({ example: true })
+  @ApiProperty({ example: "password123" })
   @Field()
-  @IsBoolean()
-  is_active: boolean;
+  @IsNotEmpty()
+  confirm_password: string;
 
-  @ApiProperty({ example: false })
-  @Field()
-  @IsBoolean()
-  is_creator: boolean;
 }
