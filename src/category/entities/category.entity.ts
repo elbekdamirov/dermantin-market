@@ -1,6 +1,7 @@
 import { Field, ID, ObjectType } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Dermantin } from "src/dermantin/entities/dermantin.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @ObjectType()
 @Entity()
@@ -25,4 +26,8 @@ export class Category {
   })
   @Column({ nullable: true })
   logo: string;
+
+  @Field(() => [Dermantin])
+  @OneToMany(() => Dermantin, (dermantin) => dermantin.category)
+  dermantins: Dermantin[];
 }

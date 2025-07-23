@@ -13,7 +13,28 @@ type Admin {
   phone: String!
 }
 
+type Advertisement {
+  dermantin: Dermantin!
+  discount_percent: Float!
+  end_date: DateTime!
+  id: ID!
+  start_date: DateTime!
+  status: AdvertisementStatus!
+  type: AdvertisementType!
+}
+
+enum AdvertisementStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum AdvertisementType {
+  BANNER
+  SLIDER
+}
+
 type Category {
+  dermantins: [Dermantin!]!
   id: ID!
   logo: String
   name: String!
@@ -38,6 +59,27 @@ input CreateUserDto {
   phone: String!
   region: UserRegion!
   role: UserRole!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Dermantin {
+  advertisements: [Advertisement!]
+  category: Category!
+  class: DermantinClass!
+  id: ID!
+  name: String!
+  price: Float!
+  rating: Float!
+}
+
+enum DermantinClass {
+  LUX
+  PREMIUM
+  STANDARD
 }
 
 type Mutation {

@@ -7,6 +7,9 @@ import { CategoryModule } from './category/category.module';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { DermantinModule } from './dermantin/dermantin.module';
+import { AdvertisementsModule } from './advertisements/advertisements.module';
+import { DermantinImagesModule } from './dermantin-images/dermantin-images.module';
 
 @Module({
   imports: [
@@ -42,6 +45,12 @@ import { AuthModule } from './auth/auth.module';
     UserModule,
 
     AuthModule,
+
+    DermantinModule,
+
+    AdvertisementsModule,
+
+    DermantinImagesModule,
   ],
   controllers: [],
   providers: [],
