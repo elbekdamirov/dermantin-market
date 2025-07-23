@@ -15,6 +15,8 @@ import {
 import { Category } from "../../category/entities/category.entity";
 import { ApiProperty } from "@nestjs/swagger";
 import { Advertisement } from "src/advertisements/entities/advertisement.entity";
+import { Review } from "src/reviews/entities/review.entity";
+import { Order } from "src/order/entities/order.entity";
 
 export enum DermantinClass {
   STANDARD = "STANDARD",
@@ -72,9 +74,9 @@ export class Dermantin {
   @Field(() => [Advertisement], { nullable: true })
   advertisements?: Advertisement[];
 
-  // @OneToMany(() => Review, (review) => review.dermantin)
-  // reviews: Review[];
+  @OneToMany(() => Review, (review) => review.dermantin)
+  reviews: Review[];
 
-  // @OneToMany(() => Order, (order) => order.dermantin)
-  // orders: Order[];
+  @OneToMany(() => Order, (order) => order.dermantin)
+  orders: Order[];
 }

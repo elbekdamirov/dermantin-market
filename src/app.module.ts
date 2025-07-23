@@ -10,6 +10,12 @@ import { AuthModule } from './auth/auth.module';
 import { DermantinModule } from './dermantin/dermantin.module';
 import { AdvertisementsModule } from './advertisements/advertisements.module';
 import { DermantinImagesModule } from './dermantin-images/dermantin-images.module';
+import { RequestModule } from './request/request.module';
+import { StoreModule } from './store/store.module';
+import { ReviewsModule } from './reviews/reviews.module';
+import { OrderModule } from './order/order.module';
+import { SocialsModule } from './socials/socials.module';
+import { PaymentsModule } from './payments/payments.module';
 
 @Module({
   imports: [
@@ -51,6 +57,18 @@ import { DermantinImagesModule } from './dermantin-images/dermantin-images.modul
     AdvertisementsModule,
 
     DermantinImagesModule,
+
+    RequestModule,
+
+    StoreModule,
+
+    ReviewsModule,
+
+    OrderModule,
+
+    SocialsModule,
+
+    PaymentsModule,
   ],
   controllers: [],
   providers: [],

@@ -1,6 +1,11 @@
 import { ObjectType, Field, registerEnumType, ID } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Order } from "src/order/entities/order.entity";
+import { Payment } from "src/payments/entities/payment.entity";
+import { Request } from "src/request/entities/request.entity";
+import { Review } from "src/reviews/entities/review.entity";
+import { Store } from "src/store/entities/store.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 export enum UserRole {
   USER = "user",
@@ -78,4 +83,20 @@ export class User {
   @Field(() => UserLang)
   @ApiProperty({ enum: UserLang, description: "Til (uz yoki ru)" })
   lang: UserLang;
+
+  @OneToMany(() => Review, (review) => review.user)
+  reviews: Review[];
+
+  @OneToMany(() => Store, (store) => store.manager)
+  stores: Store[];
+
+  @OneToMany(() => Order, (order) => order.user)
+  orders: Order[];
+
+  @OneToMany(() => Payment, (payment) => payment.user)
+  @Field(() => [Payment], { nullable: true })
+  payments: Payment[];
+
+  @OneToMany(() => Request, (request) => request.user)
+  requests: Request[];
 }
