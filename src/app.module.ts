@@ -17,6 +17,8 @@ import { OrderModule } from './order/order.module';
 import { SocialsModule } from './socials/socials.module';
 import { PaymentsModule } from './payments/payments.module';
 import { HistoryModule } from './history/history.module';
+import { ChatModule } from './chat/chat.module';
+import { MessageModule } from './message/message.module';
 
 @Module({
   imports: [
@@ -72,6 +74,10 @@ import { HistoryModule } from './history/history.module';
     PaymentsModule,
 
     HistoryModule,
+
+    ChatModule,
+
+    MessageModule,
   ],
   controllers: [],
   providers: [],

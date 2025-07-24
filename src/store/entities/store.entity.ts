@@ -12,6 +12,7 @@ import { User } from "src/user/entities/user.entity";
 import { Review } from "src/reviews/entities/review.entity";
 import { Order } from "src/order/entities/order.entity";
 import { Social } from "src/socials/entities/social.entity";
+import { Chat } from "src/chat/entities/chat.entity";
 
 export enum Region {
   TASHKENT = "TASHKENT",
@@ -86,4 +87,8 @@ export class Store {
 
   @OneToMany(() => Order, (order) => order.store)
   orders: Order[];
+
+  @Field(() => [Chat], { nullable: true })
+  @OneToMany(() => Chat, (chat) => chat.store)
+  chats: Chat[];
 }

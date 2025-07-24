@@ -40,6 +40,14 @@ type Category {
   name: String!
 }
 
+type Chat {
+  id: Int!
+  store: Store!
+  storeId: Int!
+  user: User!
+  userId: Int!
+}
+
 input CreateAdminDto {
   confirm_password: String!
   email: String!
@@ -172,6 +180,7 @@ enum Status {
 }
 
 type Store {
+  chats: [Chat!]
   description: String!
   id: Int!
   logoUrl: String!
@@ -212,6 +221,7 @@ input UpdateUserDto {
 }
 
 type User {
+  chats: [Chat!]
   fullname: String!
   id: ID!
   is_verified: Float!
