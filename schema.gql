@@ -198,8 +198,6 @@ input UpdateCategoryDto {
   name: String
 }
 
-
-
 input UpdateOrderDto {
   dermantinId: Int
   remainingPrice: Float

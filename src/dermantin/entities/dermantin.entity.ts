@@ -17,6 +17,7 @@ import { ApiProperty } from "@nestjs/swagger";
 import { Advertisement } from "src/advertisements/entities/advertisement.entity";
 import { Review } from "src/reviews/entities/review.entity";
 import { Order } from "src/order/entities/order.entity";
+import { History } from "src/history/entities/history.entity";
 
 export enum DermantinClass {
   STANDARD = "STANDARD",
@@ -79,4 +80,7 @@ export class Dermantin {
 
   @OneToMany(() => Order, (order) => order.dermantin)
   orders: Order[];
+
+  @OneToMany(() => History, (history) => history.dermantin)
+  histories: History[];
 }

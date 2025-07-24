@@ -12,6 +12,7 @@ import { User } from "src/user/entities/user.entity";
 import { Store } from "src/store/entities/store.entity";
 import { Dermantin } from "src/dermantin/entities/dermantin.entity";
 import { Payment } from "src/payments/entities/payment.entity";
+import { History } from "src/history/entities/history.entity";
 
 @ObjectType()
 @Entity("orders")

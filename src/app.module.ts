@@ -16,6 +16,7 @@ import { ReviewsModule } from './reviews/reviews.module';
 import { OrderModule } from './order/order.module';
 import { SocialsModule } from './socials/socials.module';
 import { PaymentsModule } from './payments/payments.module';
+import { HistoryModule } from './history/history.module';
 
 @Module({
   imports: [
@@ -69,6 +70,8 @@ import { PaymentsModule } from './payments/payments.module';
     SocialsModule,
 
     PaymentsModule,
+
+    HistoryModule,
   ],
   controllers: [],
   providers: [],

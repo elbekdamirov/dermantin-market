@@ -1,5 +1,6 @@
 import { ObjectType, Field, registerEnumType, ID } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+import { History } from "src/history/entities/history.entity";
 import { Order } from "src/order/entities/order.entity";
 import { Payment } from "src/payments/entities/payment.entity";
 import { Request } from "src/request/entities/request.entity";
@@ -99,4 +100,7 @@ export class User {
 
   @OneToMany(() => Request, (request) => request.user)
   requests: Request[];
+
+  @OneToMany(() => History, (history) => history.user)
+  histories: History[];
 }
